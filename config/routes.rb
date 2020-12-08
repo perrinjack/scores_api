@@ -1,8 +1,9 @@
-Rails.application.routes.draw do
-  root to: "application#not_found"
-  
+# frozen_string_literal: true
 
-  resources :seasons do 
+Rails.application.routes.draw do
+  root to: 'application#not_found'
+
+  resources :seasons do
     resources :matches
   end
 

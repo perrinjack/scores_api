@@ -1,7 +1,9 @@
-class ApplicationController < ActionController::API
-    include Response
+# frozen_string_literal: true
 
-    def not_found
-        render plain: "Not found.", status: 404
-    end
+class ApplicationController < ActionController::API
+  include Response
+  include ExceptionHandler
+  def not_found
+    render plain: 'Not found.', status: 404
+  end
 end
