@@ -5,6 +5,7 @@ class SeasonsController < ApplicationController
 
   def index
     @seasons = Season.all
+
     json_response(@seasons)
   end
 
@@ -13,11 +14,6 @@ class SeasonsController < ApplicationController
   end
 
   private
-
-  def season_params
-    # whitelist params
-    params.permit(:title, :created_at)
-  end
 
   def set_season
     @season = Season.find(params[:id])
